@@ -2,7 +2,6 @@
     <main>
         <Header />
         <Content />
-        <Footer />
     </main>
 </template>
 
