@@ -1,11 +1,11 @@
 <template>
-    <section class="section">
-        <div class="container">
-            <slot name="title"></slot>
-            <slot name="description"></slot>
-            <slot></slot>
-        </div>
-    </section>
+  <section class="section">
+    <div class="container">
+      <slot name="title" />
+      <slot name="description" />
+      <slot />
+    </div>
+  </section>
 </template>
 
 <style>

@@ -1,8 +1,8 @@
 <template>
-    <main>
-        <Header />
-        <Content />
-    </main>
+  <main>
+    <Header />
+    <Content />
+  </main>
 </template>
 
 <style>
@@ -18,12 +18,10 @@ main > div {
 
 <script>
 import Header from '../components/Header'
-import Footer from '../components/Footer'
 
 export default {
-    components: {
-        Header,
-        Footer
-    }
-};
+  components: {
+    Header
+  }
+}
 </script>
