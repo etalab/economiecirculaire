@@ -30,7 +30,7 @@ L’économie circulaire désigne un modèle dont l’objectif est de produire d
 
 </Section>
 
-<Section class="section-darker-grey">
+<Section class="section-dark">
 
 ## Actualité juridique
 
