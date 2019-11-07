@@ -12,7 +12,7 @@ Consultez, téléchargez et réutilisez facilement les données relatives à l'�
 
 <Section>
 
-<div class="row">
+<div class="container">
 
 <div>
 
@@ -37,11 +37,13 @@ L’économie circulaire désigne un modèle dont l’objectif est de produire d
 <div class="row">
 
 <div>
-Fin du gaspillage, mobilisation des industriels, meilleure information sur les produits que nous achetons, amélioration de la collecte des déchets… ces préoccupations sont au cœur du quotidien des Français. Après plus d’un an et demi de concertation et de consultation des acteurs, notamment lors des travaux menés pour la **Feuille de route pour l’économie circulaire**, le projet de loi anti-gaspillage répond à une ambition forte : transformer nos modes de production et de consommation en profondeur.
+IMAGE 
 
 </div>
 
 <div style="font-size: 1.5em; line-height: 1.5em;">
+Fin du gaspillage, mobilisation des industriels, meilleure information sur les produits que nous achetons, amélioration de la collecte des déchets… ces préoccupations sont au cœur du quotidien des Français. Après plus d’un an et demi de concertation et de consultation des acteurs, notamment lors des travaux menés pour la **Feuille de route pour l’économie circulaire**, le projet de loi anti-gaspillage répond à une ambition forte : transformer nos modes de production et de consommation en profondeur.
+
 Plus d’informations sur le projet de loi anti-gaspillage :  Rendez-vous sur <a href="https://www.ecologique-solidaire.gouv.fr/economie-circulaire-senat-adopte-projet-loi-anti-gaspillage">le site du Ministère de la Transition écologique et solidaire</a>
 
 </div>
@@ -50,20 +52,23 @@ Plus d’informations sur le projet de loi anti-gaspillage :  Rendez-vous sur <a
 
 </Section>
 
-
 <Section>
 
-<div class="row">
+<div class="container">
 
 <div>
 
 ## Les données
 
-<Playlist id="5d94a5678b4c412f00bf3f98/d46fb310-134a-437c-8489-fb094083d6ca" />
+<Playlist id="5d95fc98634f4135a7e09020/81ae5e01-4387-4967-9b0c-60c403cb5f72" />
 
 </div>
 
 <div>
+
+</Section>
+
+<Section>
 
 ## Soumettre ou demander un nouveau jeu de données
 
