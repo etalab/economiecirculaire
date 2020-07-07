@@ -11,15 +11,22 @@ module.exports = {
    */
   description: description,
 
+  markdown: {
+    anchor: { permalink: false }
+  },
+
   /**
    * Extra tags to be injected to the page HTML `<head>`
    *
    * ref：https://v1.vuepress.vuejs.org/config/#head
    */
   head: [
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    [ "link", {
+        rel: "stylesheet",
+        href: "https://unpkg.com/template.data.gouv.fr@1.2.2/dist/main.min.css"
+    } ]
   ],
 
   /**
@@ -28,6 +35,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
+    subdomain: 'economiecirculaire',
     repo: '',
     editLinks: false,
     docsDir: '',
@@ -65,7 +73,5 @@ module.exports = {
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
   plugins: [
-    '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
   ]
 }

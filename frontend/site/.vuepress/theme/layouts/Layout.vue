@@ -1,0 +1,27 @@
+<template>
+  <main>
+    <Header />
+    <Content />
+  </main>
+</template>
+
+<style>
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+main > div {
+    flex-grow: 1;
+}
+</style>
+
+<script>
+import Header from '../components/Header'
+
+export default {
+  components: {
+    Header
+  }
+}
+</script>
