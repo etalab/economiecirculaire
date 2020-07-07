@@ -8,8 +8,7 @@ from flask_cors import CORS
 app = Flask(__name__,
             static_folder="../dist/assets",
             template_folder="../dist")
-# CORS only for local dev
-cors = CORS(app, resources={r"/api/*": {"origins": "http://localhost:8080"}})
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 cache = Cache(app, config={"CACHE_TYPE": "filesystem", "CACHE_DIR": "/tmp"})
 
 AIRTABLES_URL = "https://api.airtable.com/v0/appXjbMenFXlzxNLp"
