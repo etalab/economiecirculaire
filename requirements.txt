@@ -1,5 +1,5 @@
 flask
 flask-cors
-dataset
-psycopg2-binary
 gunicorn
+requests
+Flask-Caching

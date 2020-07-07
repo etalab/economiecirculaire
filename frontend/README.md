@@ -1,24 +1,13 @@
 # frontend
 
-## Project setup
-```
-yarn install
-```
+> 
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Development
 
-### Compiles and minifies for production
-```
+```bash
+yarn dev
 yarn build
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
+For more details, please head VuePress's [documentation](https://v1.vuepress.vuejs.org/).
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
