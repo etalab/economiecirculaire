@@ -1,5 +1,5 @@
 ---
-title: les données de l'économie circulaire
+title: Les données de l'économie circulaire
 ---
 
 <Hero>
