@@ -1,6 +1,7 @@
 import os
 import requests
 
+from datetime import date
 from flask import Flask, render_template, jsonify, request
 from flask_caching import Cache
 from flask_cors import CORS
@@ -27,12 +28,14 @@ def inventaire():
 
 @app.route("/api/demande", methods=["POST"])
 def demande():
-    fields = [
-        "Quelles données recherchez-vous ?",
-        "S’il est connu, quel est le titre du jeu de données recherché ?"
-    ]
+    # mapping {<form_name>: <airtables_name>}
+    fields = {
+        "description": "Quelles données recherchez-vous ?",
+        "title": "S’il est connu, quel est le titre du jeu de données recherché ?",
+    }
     url = f"{AIRTABLES_URL}/Demandes%20d'ouverture"
-    fields_dict = {field: request.json["fields"].get(field) for field in fields}
+    fields_dict = {fields[fkey]: request.json.get(fkey) for fkey in fields.keys()}
+    fields_dict["Date"] = date.today().isoformat()
     r = requests.post(url, json={
         "fields": fields_dict
     }, headers=HEADERS)

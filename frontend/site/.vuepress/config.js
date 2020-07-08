@@ -25,7 +25,7 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     [ "link", {
         rel: "stylesheet",
-        href: "https://unpkg.com/template.data.gouv.fr@1.2.2/dist/main.min.css"
+        href: "https://unpkg.com/template.data.gouv.fr@1.3.2/dist/main.min.css"
     } ]
   ],
 

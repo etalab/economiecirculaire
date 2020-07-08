@@ -92,11 +92,11 @@ Plus d’informations sur le projet de loi anti-gaspillage :  Rendez-vous sur <a
 
 Si vous disposez d'un jeu de données relatif à l'économie circulaire, vous pouvez le publier sur data.gouv.fr.
 
-<Button>Publier sur data.gouv.fr</Button>
+<Button url="https://www.data.gouv.fr/fr/">Publier sur data.gouv.fr</Button>
 
 Si vous recherchez des données relatives à l'économie circulaire qui ne sont pas publiées à ce jour, vous pouvez nous faire parvenir votre demande.
 
-<Button>Demander des données</Button>
+<Button url="/demande">Demander des données</Button>
 
 </div>
 
