@@ -1,5 +1,5 @@
 <template>
-  <div class="row playlist-container">
+  <div class="playlist-container">
     <PlaylistItem
       v-for="dataset in datasets"
       :dataset="dataset"
