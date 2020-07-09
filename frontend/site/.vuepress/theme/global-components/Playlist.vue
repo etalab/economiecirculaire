@@ -56,6 +56,6 @@ export default {
 .playlist-item {
   flex: 0 0 auto;
   margin: 10px;
-  width: 250px;
+  width: 300px;
 }
 </style>
