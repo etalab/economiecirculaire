@@ -1,6 +1,11 @@
 <template>
   <div>
     <h1>Inventaire des données à ouvrir</h1>
+    <div v-if="!loading" style="margin-bottom: 10px;">
+      <span class="badge orange">{{ counters.opening }} en cours d'ouverture</span>
+      <span class="badge red">{{ counters.closed }} fermés</span>
+      <span class="badge dark-grey">{{ counters.preview }} consultables uniquement</span>
+    </div>
     <table class="table">
       <thead>
         <tr>
@@ -23,6 +28,7 @@ export default {
   name: 'Inventory',
   data () {
     return {
+      loading: true,
       datasets: [],
       columns: [
         "Titre du jeu de données",
@@ -46,13 +52,13 @@ export default {
         switch (value) {
           case 'Fermé':
             _class = 'red'
-            break;
+            break
           case 'Consultable uniquement':
             _class = 'dark-grey'
-            break;
+            break
           case 'En cours d’ouverture':
             _class = 'orange'
-            break;
+            break
         }
         return `<span class="badge ${_class}">${value}</span>`
       } else {
@@ -62,8 +68,32 @@ export default {
   },
   mounted () {
     axios.get(`${this.$themeConfig.apiUrl}/inventaire`).then((res) => {
+      this.loading = false
       this.datasets = res.data.records
     })
+  },
+  computed: {
+    counters () {
+      const count = {
+        'closed': 0,
+        'opening': 0,
+        'preview': 0
+      }
+      this.datasets.forEach(dataset => {
+        switch (dataset.fields['Statut d’ouverture']) {
+          case 'Fermé':
+            count.closed += 1
+            break
+          case 'Consultable uniquement':
+            count.preview += 1
+            break
+          case 'En cours d’ouverture':
+            count.opening += 1
+            break
+        }
+      })
+      return count
+    }
   }
 }
 </script>
