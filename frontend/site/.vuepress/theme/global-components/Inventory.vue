@@ -67,8 +67,10 @@ export default {
     }
   },
   mounted () {
+    const loader = this.$loading.show()
     axios.get(`${this.$themeConfig.apiUrl}/inventaire`).then((res) => {
       this.loading = false
+      loader.hide()
       this.datasets = res.data.records
     })
   },

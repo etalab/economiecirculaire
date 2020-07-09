@@ -35,9 +35,10 @@ export default {
     }
   },
   async mounted () {
+    const loader = this.$loading.show()
     const datasets = await getDatasets(this.id)
     this.datasets = datasets
-    console.log(datasets)
+    loader.hide()
   }
 }
 </script>
