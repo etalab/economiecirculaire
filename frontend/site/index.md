@@ -81,7 +81,7 @@ Plus d’informations sur le projet de loi anti-gaspillage :  Rendez-vous sur <a
 
 Découvrez les données déjà ouvertes.
 
-<Button url="/donnees-ouvertes">Données ouvertes</Button>
+<Button url="/donnees-ouvertes.html">Données ouvertes</Button>
 
 </div>
 
@@ -89,7 +89,7 @@ Découvrez les données déjà ouvertes.
 
 Explorez l'inventaire des données à ouvrir.
 
-<Button url="/inventaire">Inventaire</Button>
+<Button url="/inventaire.html">Inventaire</Button>
 
 </div>
 
@@ -105,7 +105,7 @@ Si vous disposez d'un jeu de données relatif à l'économie circulaire, vous po
 
 Si vous recherchez des données relatives à l'économie circulaire qui ne sont pas publiées à ce jour, vous pouvez nous faire parvenir votre demande.
 
-<Button url="/demande">Demander des données</Button>
+<Button url="/demande.html">Demander des données</Button>
 
 </div>
 
@@ -123,11 +123,11 @@ Si vous recherchez des données relatives à l'économie circulaire qui ne sont 
 
 Découvrez les données déjà ouvertes.
 
-<Button url="/donnees-ouvertes">Données ouvertes</Button>
+<Button url="/donnees-ouvertes.html">Données ouvertes</Button>
 
 Explorez l'inventaire des données à ouvrir.
 
-<Button url="/inventaire">Inventaire</Button>
+<Button url="/inventaire.html">Inventaire</Button>
 
 
 </div>
@@ -142,7 +142,7 @@ Si vous disposez d'un jeu de données relatif à l'économie circulaire, vous po
 
 Si vous recherchez des données relatives à l'économie circulaire qui ne sont pas publiées à ce jour, vous pouvez nous faire parvenir votre demande.
 
-<Button url="/demande">Demander des données</Button>
+<Button url="/demande.html">Demander des données</Button>
 
 </div>
 
