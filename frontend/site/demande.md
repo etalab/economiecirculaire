@@ -1,7 +1,8 @@
 ---
 title: Demander des données
 ---
+<div class="container">
 
-# Demander des données
+<DemandeForm title="Demander des données"></DemandeForm>
 
-<DemandeForm></DemandeForm>
+</div>

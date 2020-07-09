@@ -73,6 +73,45 @@ Plus d’informations sur le projet de loi anti-gaspillage :  Rendez-vous sur <a
 
 </Section>
 
+<Section class="section-grey">
+
+<div class="row">
+
+<div>
+
+Découvrez les données déjà ouvertes.
+
+<Button url="/donnees-ouvertes">Données ouvertes</Button>
+
+</div>
+
+<div>
+
+Explorez l'inventaire des données à ouvrir.
+
+<Button url="/inventaire">Inventaire</Button>
+
+</div>
+
+<div>
+
+Si vous disposez d'un jeu de données relatif à l'économie circulaire, vous pouvez le publier sur data.gouv.fr.
+
+<Button url="https://www.data.gouv.fr/fr/">Publier sur data.gouv.fr</Button>
+
+</div>
+
+<div>
+
+Si vous recherchez des données relatives à l'économie circulaire qui ne sont pas publiées à ce jour, vous pouvez nous faire parvenir votre demande.
+
+<Button url="/demande">Demander des données</Button>
+
+</div>
+
+</div>
+
+</Section>
 
 <Section>
 
@@ -82,7 +121,14 @@ Plus d’informations sur le projet de loi anti-gaspillage :  Rendez-vous sur <a
 
 ## Les données
 
-<Playlist id="5d94a5678b4c412f00bf3f98/d46fb310-134a-437c-8489-fb094083d6ca" />
+Découvrez les données déjà ouvertes.
+
+<Button url="/donnees-ouvertes">Données ouvertes</Button>
+
+Explorez l'inventaire des données à ouvrir.
+
+<Button url="/inventaire">Inventaire</Button>
+
 
 </div>
 

@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-bottom: 1em;">
+  <div class="playlist-item" style="margin-bottom: 1em;">
     <div v-html="html" />
   </div>
 </template>

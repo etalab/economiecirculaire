@@ -2,4 +2,6 @@
 title: Inventaire des données à ouvrir
 ---
 
-<Inventory />
+<div class="container">
+  <Inventory />
+</div>

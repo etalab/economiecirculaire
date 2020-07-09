@@ -7,6 +7,7 @@
       Oups, quelque chose s'est mal passé 🤕. Vous pouvez réessayer ou nous contacter sur ouverture@data.gouv.fr.
     </div>
     <form v-if="!submited" @submit.prevent="submit">
+      <h1>{{ title }}</h1>
       <div class="form__group">
         <label class="required" for="description">Quelles données recherchez-vous ?</label>
         <textarea v-model="form.description" name="description" id="description" required></textarea>
@@ -24,6 +25,9 @@
 import axios from 'axios'
 
 export default {
+  props: {
+    title: String
+  },
   data () {
     return {
       form: {},

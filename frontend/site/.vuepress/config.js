@@ -23,10 +23,14 @@ module.exports = {
   head: [
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-    [ "link", {
+    ["link", {
         rel: "stylesheet",
         href: "https://unpkg.com/template.data.gouv.fr@1.3.2/dist/main.min.css"
-    } ]
+    }],
+    ["link", {
+        rel: "shortcut icon",
+        href: "https://static.data.gouv.fr/_themes/gouvfr/img/favicon.png"
+    }]
   ],
 
   /**

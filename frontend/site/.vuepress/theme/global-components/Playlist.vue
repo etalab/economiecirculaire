@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="row playlist-container">
     <PlaylistItem
       v-for="dataset in datasets"
       :dataset="dataset"
@@ -41,3 +41,20 @@ export default {
   }
 }
 </script>
+
+<style>
+.playlist-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: auto;
+  align-content: start
+}
+
+.playlist-item {
+  flex: 0 0 auto;
+  margin: 10px;
+  width: 250px;
+}
+</style>
