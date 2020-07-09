@@ -13,8 +13,41 @@
         <textarea v-model="form.description" name="description" id="description" required></textarea>
       </div>
       <div class="form__group">
-        <label for="title">S’il est connu, quel est le titre du jeu de données recherché ?</label>
+        <label for="title">S’il est connu, quel est le titre du jeu de données ou de la base recherché ?</label>
         <input v-model="form.title" type="text" value="" name="title" id="title">
+      </div>
+      <div class="form__group">
+        <label for="organisation">Quelle est l’organisation susceptible de diffuser ce jeu de données ?</label>
+        <input v-model="form.organisation" type="text" value="" name="organisation" id="organisation">
+      </div>
+      <div class="form__group">
+        <label for="geo">Quelle granularité géographique recherchez-vous ?</label>
+        <select v-model="form.geo" id="geo">
+          <option></option>
+          <option>Nationale</option>
+          <option>Régionale</option>
+          <option>Départementale</option>
+          <option>EPCI</option>
+          <option>Communale</option>
+          <option>Adresse</option>
+        </select>
+      </div>
+      <div class="form__group">
+        <label for="update">Quelle fréquence de mise à jour serait la plus adaptée à votre usage du jeu de données ?</label>
+        <select v-model="form.update" id="update">
+          <option></option>
+          <option>Annuelle</option>
+          <option>Semestrielle</option>
+          <option>Trimestrielle</option>
+          <option>Mensuelle</option>
+          <option>Hebdomadaire</option>
+          <option>Quotidienne</option>
+          <option>Temps réel</option>
+        </select>
+      </div>
+      <div class="form__group">
+        <label for="reuse">Quelle réutilisation de ces données envisagez-vous ?</label>
+        <textarea v-model="form.reuse" name="reuse" id="reuse"></textarea>
       </div>
       <button class="button" type="submit" name="subscribe" id="submit">Valider</button>
     </form>

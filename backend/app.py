@@ -30,8 +30,13 @@ def inventaire():
 def demande():
     # mapping {<form_name>: <airtables_name>}
     fields = {
-        "description": "Quelles données recherchez-vous ?",
-        "title": "S’il est connu, quel est le titre du jeu de données recherché ?",
+        "description": "Données recherchées",
+        "title": "Titre du jeu de données",
+        "organisation": "Organisation",
+        "geo": "Echelle géographique souhaitée",
+        "update": "Fréquence de mise à jour souhaitée",
+        "reuse": "Réutilisation envisagée",
+        "contact": "Contact",
     }
     url = f"{AIRTABLES_URL}/Demandes%20d'ouverture"
     fields_dict = {fields[fkey]: request.json.get(fkey) for fkey in fields.keys()}
