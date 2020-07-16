@@ -8,3 +8,10 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.hero {
+  background-image: url('/assets/img/bandeau.jpg');
+  background-size: cover;
+}
+</style>
