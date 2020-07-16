@@ -22,7 +22,7 @@ Fin du gaspillage, meilleure information sur les produits que nous achetons, am�
 
 L’économie circulaire désigne un modèle dont l’objectif est de produire des biens et des services de manière durable, en limitant la consommation, le gaspillage de ressources et la production des déchets. Ce système où chaque déchet redevient la base d’une nouvelle ressource s’oppose à notre système linéaire actuel : extraire, fabriquer, consommer, jeter.
 
-<Button url="https://www.ecologique-solidaire.gouv.fr/politiques/economie-circulaire-et-dechets">En savoir plus sur l’économie circulaire</Button>
+<Button class url="https://www.ecologique-solidaire.gouv.fr/politiques/economie-circulaire-et-dechets">En savoir plus sur l’économie circulaire</Button>
 
 </Section>
 
