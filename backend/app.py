@@ -10,12 +10,14 @@ app = Flask(__name__,
             static_folder="../dist/assets",
             template_folder="../dist")
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
-cache = Cache(app, config={"CACHE_TYPE": "filesystem", "CACHE_DIR": "/tmp"})
+
+CACHE_CONFIG = {"CACHE_TYPE": "filesystem", "CACHE_DIR": "/tmp"}
+cache = Cache(app, config=CACHE_CONFIG)
 
 AIRTABLES_URL = "https://api.airtable.com/v0/appXjbMenFXlzxNLp"
 API_KEY = os.getenv("AIRTABLES_API_KEY")
 HEADERS = {"Authorization": f"Bearer {API_KEY}"}
-CACHE_TIMEOUT = 0 if app.config['DEBUG'] else os.getenv('CACHE_TIMEOUT', 600)
+CACHE_TIMEOUT = 1 if app.config['DEBUG'] else os.getenv('CACHE_TIMEOUT', 600)
 
 
 @app.route("/api/inventaire")

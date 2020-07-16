@@ -2,6 +2,7 @@
   <div>
     <h1>Inventaire des données à ouvrir</h1>
     <div v-if="!loading" style="margin-bottom: 10px;">
+      <span class="badge green">{{ counters.open }} ouverts</span>
       <span class="badge orange">{{ counters.opening }} en cours d'ouverture</span>
       <span class="badge red">{{ counters.closed }} fermés</span>
       <span class="badge dark-grey">{{ counters.preview }} consultables uniquement</span>
@@ -32,11 +33,12 @@ export default {
       datasets: [],
       columns: [
         "Titre du jeu de données",
-        "Base de données ou applicatif",
-        "Description du jeu de données",
         "Organisation",
+        "Description du jeu de données",
+        "Base de données ou applicatif",
         // "Producteurs (nombre de jeux de données)",
         "Statut d’ouverture",
+        "Date estimée de publication",
         // "URL du jeu de données"
       ]
     }
@@ -59,6 +61,9 @@ export default {
           case 'En cours d’ouverture':
             _class = 'orange'
             break
+          case 'Ouvert':
+            _class = 'green'
+            break
         }
         return `<span class="badge ${_class}">${value}</span>`
       } else {
@@ -79,7 +84,8 @@ export default {
       const count = {
         'closed': 0,
         'opening': 0,
-        'preview': 0
+        'preview': 0,
+        'open': 0
       }
       this.datasets.forEach(dataset => {
         switch (dataset.fields['Statut d’ouverture']) {
@@ -91,6 +97,9 @@ export default {
             break
           case 'En cours d’ouverture':
             count.opening += 1
+            break
+          case 'Ouvert':
+            count.open += 1
             break
         }
       })
@@ -115,6 +124,7 @@ export default {
 }
 .badge.green {
   background-color: #03bd5b;
+  color: white;
 }
 .badge.dark-grey {
   background-color: #53657d;

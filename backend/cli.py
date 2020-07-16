@@ -1,10 +1,9 @@
-import os
-import uuid
 import click
-import dataset
 
-db = dataset.connect(os.getenv('DATABASE_URL', 'sqlite:///data.db'))
-table = db["dummy_data"]
+from app import app, CACHE_CONFIG
+from flask_caching import Cache
+
+cache = Cache()
 
 
 @click.group()
@@ -13,18 +12,12 @@ def cli():
 
 
 @cli.command()
-def init_db():
-    """Insert some dummy data in DB."""
-    if len(table) > 0:
-        click.echo("No need to import data, skipping.")
-        return
-    click.echo("Importing data...")
-    for x in range(20):
-        table.insert({
-            "uuid": str(uuid.uuid4()),
-            "slug": f"user-{x}"
-        })
-    click.echo("Done.")
+def flush_cache():
+    """Flush cache"""
+    cache.init_app(app, config=CACHE_CONFIG)
+    with app.app_context():
+        cache.clear()
+    print('Done.')
 
 
 if __name__ == "__main__":
