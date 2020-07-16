@@ -16,7 +16,7 @@ Fin du gaspillage, meilleure information sur les produits que nous achetons, am√
 
 </Section>
 
-<Section class="section-blue">
+<Section class="section-color">
 
 ## Qu'est ce que l'√©conomie circulaire ? 
 
