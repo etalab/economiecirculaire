@@ -91,7 +91,7 @@ export default {
       return this.datasets.filter(dataset => {
         return Object.keys(dataset.fields).some(field => {
           if (!dataset.fields[field] || !dataset.fields[field].toLowerCase) return false
-          return dataset.fields[field].toLowerCase().includes(this.query)
+          return dataset.fields[field].toLowerCase().includes(this.query.toLowerCase())
         })
       })
     },
