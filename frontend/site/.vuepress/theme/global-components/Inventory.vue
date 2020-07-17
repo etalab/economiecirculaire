@@ -7,7 +7,7 @@
       <span class="badge red">{{ counters.closed }} fermés</span>
       <span class="badge dark-grey">{{ counters.preview }} consultables uniquement</span>
     </div>
-    <input v-model="query" type="text" class="table__filter" placeholder="Filtrer le tableau">
+    <input v-model="query" type="text" class="table__filter" placeholder="Filtrer le tableau" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
     <table class="table">
       <thead>
         <tr>
