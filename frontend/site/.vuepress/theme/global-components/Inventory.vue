@@ -2,10 +2,9 @@
   <div>
     <h1>Inventaire des données à ouvrir</h1>
     <div v-if="!loading" style="margin-bottom: 10px;">
-      <span class="badge green">{{ counters.open }} ouverts</span>
-      <span class="badge orange">{{ counters.opening }} en cours d'ouverture</span>
-      <span class="badge red">{{ counters.closed }} fermés</span>
-      <span class="badge dark-grey">{{ counters.preview }} consultables uniquement</span>
+      <span v-for="s in statuses" @click="toggle(s.key)" class="badge" :class="[!s.visible ? 'disabled' : '', s._class]">
+        {{ counters[s.key] }} {{ s.labelExtended }}
+      </span>
     </div>
     <input v-model="query" type="text" class="table__filter" placeholder="Filtrer le tableau" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
     <table class="table">
@@ -15,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="dataset in filteredDatasets">
+        <tr v-for="dataset in filteredDatasetsByStatus">
           <td v-for="column in columns" v-html="getField(dataset, column)"></td>
         </tr>
       </tbody>
@@ -30,6 +29,12 @@ export default {
   name: 'Inventory',
   data () {
     return {
+      statuses: [
+        {label: "Ouvert", key: "open", visible: true, _class: "green", labelExtended: "ouverts"},
+        {label: "En cours d’ouverture", key: "opening", visible: true, _class: "orange", labelExtended: "en cours d’ouverture"},
+        {label: "Consultable uniquement", key: "preview", visible: true, _class: "dark-grey", labelExtended: "consultables uniquement"},
+        {label: "Fermé", key: "closed", visible: true, _class: "red", labelExtended: "fermés"},
+      ],
       loading: true,
       query: '',
       datasets: [],
@@ -46,28 +51,21 @@ export default {
     }
   },
   methods: {
+    toggle (badge) {
+      const status = this.statuses.find(s => s.key == badge)
+      status.visible = !status.visible
+    },
     getField (dataset, column) {
       const fields = dataset.fields
       if (column === "Titre du jeu de données" && fields["URL du jeu de données"]) {
         return `<a href="${fields['URL du jeu de données']}">${fields["Titre du jeu de données"]}</a>`
       } else if (column === "Statut d’ouverture") {
         const value = fields['Statut d’ouverture']
-        let _class = ''
-        switch (value) {
-          case 'Fermé':
-            _class = 'red'
-            break
-          case 'Consultable uniquement':
-            _class = 'dark-grey'
-            break
-          case 'En cours d’ouverture':
-            _class = 'orange'
-            break
-          case 'Ouvert':
-            _class = 'green'
-            break
+        const status = this.statuses.find(s => s.label == value)
+        if (!status) {
+          return value
         }
-        return `<span class="badge ${_class}">${value}</span>`
+        return `<span class="badge ${status._class}">${value}</span>`
       } else {
         return fields[column]
       }
@@ -82,6 +80,12 @@ export default {
     })
   },
   computed: {
+    filteredDatasetsByStatus () {
+      const visibleStatuses = this.statuses.filter(s => s.visible).map(s => s.label)
+      return this.filteredDatasets.filter(dataset => {
+        return visibleStatuses.indexOf(dataset.fields["Statut d’ouverture"]) >= 0
+      })
+    },
     filteredDatasets () {
       if (this.query.length < 3) return this.datasets
       return this.datasets.filter(dataset => {
@@ -99,19 +103,10 @@ export default {
         'open': 0
       }
       this.filteredDatasets.forEach(dataset => {
-        switch (dataset.fields['Statut d’ouverture']) {
-          case 'Fermé':
-            count.closed += 1
-            break
-          case 'Consultable uniquement':
-            count.preview += 1
-            break
-          case 'En cours d’ouverture':
-            count.opening += 1
-            break
-          case 'Ouvert':
-            count.open += 1
-            break
+        const value = dataset.fields['Statut d’ouverture']
+        const status = this.statuses.find(s => s.label == value)
+        if (status) {
+          count[status.key] += 1
         }
       })
       return count
@@ -128,6 +123,12 @@ export default {
   border-radius: 4px;
   padding: 4px;
   font-size: 0.9em;
+  cursor: pointer;
+  margin-right: 5px;
+}
+.badge.disabled {
+  opacity: 0.5;
+  /* color: black !important; */
 }
 .badge.orange {
   background-color: #ff9947;
