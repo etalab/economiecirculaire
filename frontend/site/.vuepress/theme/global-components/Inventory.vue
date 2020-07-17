@@ -7,6 +7,7 @@
       <span class="badge red">{{ counters.closed }} fermés</span>
       <span class="badge dark-grey">{{ counters.preview }} consultables uniquement</span>
     </div>
+    <input v-model="query" type="text" class="table__filter" placeholder="Filtrer le tableau">
     <table class="table">
       <thead>
         <tr>
@@ -14,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="dataset in datasets">
+        <tr v-for="dataset in filteredDatasets">
           <td v-for="column in columns" v-html="getField(dataset, column)"></td>
         </tr>
       </tbody>
@@ -30,6 +31,7 @@ export default {
   data () {
     return {
       loading: true,
+      query: '',
       datasets: [],
       columns: [
         "Titre du jeu de données",
@@ -80,6 +82,15 @@ export default {
     })
   },
   computed: {
+    filteredDatasets () {
+      if (this.query.length < 3) return this.datasets
+      return this.datasets.filter(dataset => {
+        return Object.keys(dataset.fields).some(field => {
+          if (!dataset.fields[field] || !dataset.fields[field].toLowerCase) return false
+          return dataset.fields[field].toLowerCase().includes(this.query)
+        })
+      })
+    },
     counters () {
       const count = {
         'closed': 0,
@@ -87,7 +98,7 @@ export default {
         'preview': 0,
         'open': 0
       }
-      this.datasets.forEach(dataset => {
+      this.filteredDatasets.forEach(dataset => {
         switch (dataset.fields['Statut d’ouverture']) {
           case 'Fermé':
             count.closed += 1
@@ -110,6 +121,9 @@ export default {
 </script>
 
 <style>
+.table__filter {
+  float: none;
+}
 .badge {
   border-radius: 4px;
   padding: 4px;
