@@ -2,6 +2,7 @@
   <main>
     <Header />
     <Content />
+    <Footer />
   </main>
 </template>
 
@@ -18,10 +19,11 @@ main > div {
 
 <script>
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default {
   components: {
-    Header
+    Header, Footer
   }
 }
 </script>
