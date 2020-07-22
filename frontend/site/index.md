@@ -34,7 +34,7 @@ L’économie circulaire désigne un modèle dont l’objectif est de produire d
 
 <div>
 
-### Découvrez les jeux de données ouverts
+#### Découvrez les jeux de données ouverts
 
 Découvrez les jeux de données relatifs à l’économie circulaire ! Ces jeux de données sont disponibles sur la plateforme www.data.gouv.fr.
 
@@ -44,15 +44,16 @@ Découvrez les jeux de données relatifs à l’économie circulaire ! Ces jeux 
 
 <div>
 
-### Découvrez les documentations des jeux de données
+#### Découvrez les documentations des jeux de données
 
+Texte 
 <Button url="">Documentation</Button>
 
 </div>
 
 <div>
 
-### Explorez l'inventaire des données à ouvrir
+#### Explorez l'inventaire des données à ouvrir
 
 Les admininistrations qui produisent ou collectent des données sont engagées dans l’ouverture des données de l’économie circulaire. Afin d’apporter de la visibilité sur les chantiers de publication, vous pouvez consultez l’inventaire des données à ouvrir.
 
@@ -66,7 +67,7 @@ Les admininistrations qui produisent ou collectent des données sont engagées d
 
 <Section>
 
-## Participer à l'ouveture des jeux de données
+## Participer à l'ouverture des jeux de données
 
 Que vous soyez une administration, une entreprise, une association ou un citoyen curieux, vous aussi participez à l’ouverture des données de l’économie circulaire !
 
@@ -74,7 +75,7 @@ Que vous soyez une administration, une entreprise, une association ou un citoyen
 
 <div>
 
-## Proposez un jeu de données ou une réutilisation
+### Proposez un jeu de données ou une réutilisation
 
 Vous produisez ou collectez des données relatives à l’économie circulaire ? Vous avez utilisé des données relatives à l’économie circulaire ? Donnez de la visibilité à votre travail sur www.data.gouv.fr ! 
 
@@ -84,7 +85,7 @@ Vous produisez ou collectez des données relatives à l’économie circulaire ?
 
 <div>
   
-## Demander un nouveau jeu de données
+### Demander un nouveau jeu de données
 
 Si vous recherchez des données relatives à l'économie circulaire qui ne sont pas publiées à ce jour, vous pouvez nous faire parvenir votre demande.
 
