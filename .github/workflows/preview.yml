@@ -9,9 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/dokku-preview-create-action
+    - uses: actions/checkout@v1
     - name: Dokku deploy
-      uses: vitalyliber/dokku-github-action@57b7fd8b32adfe7924e71123a60a988aa0f62d3f
+      uses: actions/dokku-preview-create-action
       env:
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         HOST: app.etalab.studio
