@@ -25,8 +25,13 @@ APP_NAME="$PROJECT-$REF"
 
 echo "Creating app $APP_NAME"
 
+# create app
 # TODO: handle creation based on pr status
 $GIT_SSH_COMMAND dokku@$HOST "apps:create $APP_NAME" || true
+
+# enable ssl
+# TODO: only when PR/app is created
+$GIT_SSH_COMMAND dokku@$HOST "letsencrypt $APP_NAME"
 
 echo "The deploy is starting"
 
@@ -35,5 +40,5 @@ GIT_COMMAND="git push --force dokku@$HOST:$APP_NAME HEAD:refs/heads/master"
 echo "GIT_SSH_COMMAND="$GIT_SSH_COMMAND" $GIT_COMMAND"
 GIT_SSH_COMMAND="$GIT_SSH_COMMAND" $GIT_COMMAND
 
-URL="http://$APP_NAME.app.etalab.studio"
+URL="https://$APP_NAME.app.etalab.studio"
 echo "::set-output name=url::$URL"

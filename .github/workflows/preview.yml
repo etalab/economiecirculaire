@@ -24,6 +24,8 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
+      # TODO: use state: in_progress
+      # To use the in_progress and queued states, you must provide the application/vnd.github.flash-preview+json custom media type
       - name: set deployment status to in progress
         uses: octokit/request-action@v2.x
         with:
