@@ -27,13 +27,18 @@ APP_NAME="$PROJECT-$REF"
 
 echo "Creating app $APP_NAME"
 
-# create app
-# TODO: handle creation based on pr status
-$GIT_SSH_COMMAND dokku@$HOST "apps:create $APP_NAME" || true
+if [ "$GITHUB_EVENT_ACTION" -eq "opened" ] || [ "$GITHUB_EVENT_ACTION" -eq "reopened" ]; then
+    # create app
+    $GIT_SSH_COMMAND dokku@$HOST "apps:create $APP_NAME" || true
+    # enable ssl
+    $GIT_SSH_COMMAND dokku@$HOST "letsencrypt $APP_NAME"
+fi
 
-# enable ssl
-# TODO: only when PR/app is created?
-$GIT_SSH_COMMAND dokku@$HOST "letsencrypt $APP_NAME"
+if [ "$GITHUB_EVENT_ACTION" -eq "closed" ]; then
+    # delete app and exit
+    $GIT_SSH_COMMAND dokku@$HOST "--force apps:destroy $APP_NAME"
+    exit 0
+fi
 
 echo "The deploy is starting"
 
