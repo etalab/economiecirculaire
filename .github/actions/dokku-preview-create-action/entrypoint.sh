@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+echo "Triggered by: $GITHUB_EVENT_ACTION"
+
 echo "Setting up SSH directory"
 SSH_PATH="$HOME/.ssh"
 mkdir -p "$SSH_PATH"
@@ -30,7 +32,7 @@ echo "Creating app $APP_NAME"
 $GIT_SSH_COMMAND dokku@$HOST "apps:create $APP_NAME" || true
 
 # enable ssl
-# TODO: only when PR/app is created
+# TODO: only when PR/app is created?
 $GIT_SSH_COMMAND dokku@$HOST "letsencrypt $APP_NAME"
 
 echo "The deploy is starting"

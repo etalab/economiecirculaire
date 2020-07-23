@@ -2,8 +2,11 @@ name: Deploy PR to dokku
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize, closed, reopened]
     # types: [opened]
+
+env:
+  GITHUB_EVENT_ACTION: "${{ github.event.action }}"
 
 jobs:
   build:
