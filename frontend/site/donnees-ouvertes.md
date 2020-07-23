@@ -4,10 +4,10 @@ title: Données ouvertes
 
 <div class="container">
 
-  # Données ouvertes
+  # Les données de l'économie circulaire 
 
-  ## Une première playlist
+Découvrez les données de l'économie circulaire disponibles en open data sur la plateforme data.gouv.fr. 
 
-  <Playlist id="5d94a5678b4c412f00bf3f98/d46fb310-134a-437c-8489-fb094083d6ca" />
+  <Playlist id="5d95fc98634f4135a7e09020/81ae5e01-4387-4967-9b0c-60c403cb5f72" />
 
 </div>
