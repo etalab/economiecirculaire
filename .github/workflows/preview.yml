@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-        if: $GITHUB_EVENT_ACTION != "closed"
+        if: ${{ env.GITHUB_EVENT_ACTION != "closed" }}
 
       - name: create deployment
         id: create_deployment
