@@ -23,6 +23,6 @@ jobs:
         type: create
         token: ${{github.token}}
         # logs: https://your-app.com/deployment_logs
-        # environment: staging
+        environment: dokku-preview
         environment_url: ${{ steps.deploy.outputs.url }}
         job_status: ${{ job.status }} # use this to track success of the deployment in post script
