@@ -25,7 +25,8 @@ APP_NAME="$PROJECT-$REF"
 
 echo "Creating app $APP_NAME"
 
-$GIT_SSH_COMMAND dokku@$HOST "apps:create $APP_NAME"
+# TODO: handle creation based on pr status
+$GIT_SSH_COMMAND dokku@$HOST "apps:create $APP_NAME" || true
 
 echo "The deploy is starting"
 
@@ -35,4 +36,5 @@ if [ -n "$FORCE_DEPLOY" ]; then
     GIT_COMMAND="$GIT_COMMAND --force"
 fi
 
+echo "GIT_SSH_COMMAND="$GIT_SSH_COMMAND" $GIT_COMMAND"
 GIT_SSH_COMMAND="$GIT_SSH_COMMAND" $GIT_COMMAND
