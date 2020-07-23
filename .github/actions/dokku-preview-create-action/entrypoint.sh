@@ -36,5 +36,8 @@ if [ -n "$FORCE_DEPLOY" ]; then
     GIT_COMMAND="$GIT_COMMAND --force"
 fi
 
+git status -vvv
+git remote -v
+
 echo "GIT_SSH_COMMAND="$GIT_SSH_COMMAND" $GIT_COMMAND"
 GIT_SSH_COMMAND="$GIT_SSH_COMMAND" $GIT_COMMAND
