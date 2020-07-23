@@ -9,20 +9,38 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Create a deployment
-      uses: npm/action-deploy@v2
-      with:
-        type: create
-        token: ${{github.token}}
-        # logs: https://your-app.com/deployment_logs
-        environment: dokku-preview
-        environment_url: ${{ steps.deploy.outputs.url }}
-        job_status: ${{ job.status }} # use this to track success of the deployment in post script
-    - uses: actions/checkout@v1
-    - name: Dokku deploy
-      id: deploy
-      uses: ./.github/actions/dokku-preview-create-action
-      env:
-        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        HOST: app.etalab.studio
-        PROJECT: economie-circulaire
+      - uses: chrnorm/deployment-action@releases/v1
+        name: Create GitHub deployment
+        id: deployment
+        with:
+          token: "${{ github.token }}"
+          # target_url: http://my-app-url.com
+          environment: dokku-preview
+
+      # deploy app
+      - uses: actions/checkout@v1
+      - name: Dokku deploy
+        id: deploy
+        uses: ./.github/actions/dokku-preview-create-action
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          HOST: app.etalab.studio
+          PROJECT: economie-circulaire
+
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: "${{ github.token }}"
+          target_url: ${{ steps.deploy.outputs.url }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: "${{ github.token }}"
+          # target_url: http://my-app-url.com
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
