@@ -27,14 +27,16 @@ APP_NAME="$PROJECT-$REF"
 
 echo "Creating app $APP_NAME"
 
-if [ "$GITHUB_EVENT_ACTION" -eq "opened" ] || [ "$GITHUB_EVENT_ACTION" -eq "reopened" ]; then
+if [ "$GITHUB_EVENT_ACTION" = "opened" ] || [ "$GITHUB_EVENT_ACTION" = "reopened" ]
+then
     # create app
     $GIT_SSH_COMMAND dokku@$HOST "apps:create $APP_NAME" || true
     # enable ssl
     $GIT_SSH_COMMAND dokku@$HOST "letsencrypt $APP_NAME"
 fi
 
-if [ "$GITHUB_EVENT_ACTION" -eq "closed" ]; then
+if [ "$GITHUB_EVENT_ACTION" = "closed" ]
+then
     # delete app and exit
     $GIT_SSH_COMMAND dokku@$HOST "--force apps:destroy $APP_NAME"
     exit 0
