@@ -25,7 +25,7 @@ APP_NAME="$PROJECT-$REF"
 
 echo "Creating app $APP_NAME"
 
-$GIT_COMMAND dokku@$HOST "apps:create $APP_NAME"
+$GIT_SSH_COMMAND dokku@$HOST "apps:create $APP_NAME"
 
 echo "The deploy is starting"
 
