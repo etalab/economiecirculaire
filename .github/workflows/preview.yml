@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Dokku deploy
-      uses: actions/dokku-preview-create-action@HEAD
+      uses: ./.github/actions/dokku-preview-create-action
       env:
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         HOST: app.etalab.studio
