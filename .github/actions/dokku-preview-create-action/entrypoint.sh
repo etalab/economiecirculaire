@@ -30,14 +30,11 @@ $GIT_SSH_COMMAND dokku@$HOST "apps:create $APP_NAME" || true
 
 echo "The deploy is starting"
 
-GIT_COMMAND="git push dokku@$HOST:$APP_NAME HEAD:master"
+GIT_COMMAND="git push dokku@$HOST:$APP_NAME HEAD:refs/heads/master"
 if [ -n "$FORCE_DEPLOY" ]; then
     echo "Enabling force deploy"
     GIT_COMMAND="$GIT_COMMAND --force"
 fi
-
-git status -vvv
-git remote -v
 
 echo "GIT_SSH_COMMAND="$GIT_SSH_COMMAND" $GIT_COMMAND"
 GIT_SSH_COMMAND="$GIT_SSH_COMMAND" $GIT_COMMAND
