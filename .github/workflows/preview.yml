@@ -20,7 +20,7 @@ jobs:
           ref: ${{ github.head_ref }}
           environment: dokku-preview
           auto_merge: false
-          required_contexts: []
+          required_contexts: '[]'
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
