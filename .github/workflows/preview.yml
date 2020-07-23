@@ -2,8 +2,8 @@ name: Deploy PR to dokku
 
 on:
   pull_request:
-    # types: [opened, synchronize]
-    types: [opened]
+    types: [opened, synchronize]
+    # types: [opened]
 
 jobs:
   build:
