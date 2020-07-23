@@ -9,13 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: chrnorm/deployment-action@releases/v1
-        name: Create GitHub deployment
-        id: deployment
-        with:
-          token: "${{ github.token }}"
-          # target_url: http://my-app-url.com
-          environment: dokku-preview
 
       # deploy app
       - uses: actions/checkout@v1
@@ -26,6 +19,15 @@ jobs:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           HOST: app.etalab.studio
           PROJECT: economie-circulaire
+
+      - uses: chrnorm/deployment-action@releases/v1
+        name: Create GitHub deployment
+        id: deployment
+        with:
+          ref: "${{ github.head_ref }}"
+          token: "${{ github.token }}"
+          target_url: ${{ steps.deploy.outputs.url }}
+          environment: dokku-preview
 
       - name: Update deployment status (success)
         if: success()
