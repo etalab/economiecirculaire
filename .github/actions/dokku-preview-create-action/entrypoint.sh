@@ -25,10 +25,9 @@ fi
 REF=$(echo $GITHUB_REF | sed -e 's/\//-/g')
 APP_NAME="$PROJECT-$REF"
 
-echo "Creating app $APP_NAME"
-
 if [ "$GITHUB_EVENT_ACTION" = "opened" ] || [ "$GITHUB_EVENT_ACTION" = "reopened" ]
 then
+    echo "Creating app $APP_NAME"
     # create app
     $GIT_SSH_COMMAND dokku@$HOST "apps:create $APP_NAME" || true
     # enable ssl
@@ -37,6 +36,7 @@ fi
 
 if [ "$GITHUB_EVENT_ACTION" = "closed" ]
 then
+    echo "Deleting app $APP_NAME"
     # delete app and exit
     $GIT_SSH_COMMAND dokku@$HOST "--force apps:destroy $APP_NAME"
     exit 0
