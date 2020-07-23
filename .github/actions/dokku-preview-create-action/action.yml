@@ -1,5 +1,5 @@
-name: 'Dokku Github Action'
-description: 'Deploy applications to Dokku'
+name: 'Dokku PR Github Action'
+description: 'Deploy PR to Dokku'
 author: 'Alexandre Bulté'
 branding:
   icon: 'upload-cloud'
@@ -14,6 +14,8 @@ inputs:
 outputs:
   status:
     description: "The Success/Failure of the action"
+  url:
+    description: 'Deploy url'
 runs:
   using: 'docker'
   image: 'Dockerfile'

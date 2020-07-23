@@ -9,10 +9,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Dokku deploy
+      id: deploy
       uses: ./.github/actions/dokku-preview-create-action
       env:
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         HOST: app.etalab.studio
         PROJECT: economie-circulaire
+    - name: Create a deployment
+      uses: npm/action-deploy@v2
+      with:
+        type: create
+        token: ${{github.token}}
+        # logs: https://your-app.com/deployment_logs
+        # environment: staging
+        environment_url: ${{ steps.deploy.outputs.url }}
+        job_status: ${{ job.status }} # use this to track success of the deployment in post script

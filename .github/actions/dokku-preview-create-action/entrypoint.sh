@@ -34,3 +34,6 @@ GIT_COMMAND="git push --force dokku@$HOST:$APP_NAME HEAD:refs/heads/master"
 
 echo "GIT_SSH_COMMAND="$GIT_SSH_COMMAND" $GIT_COMMAND"
 GIT_SSH_COMMAND="$GIT_SSH_COMMAND" $GIT_COMMAND
+
+URL=$APP_NAME.app.etalab.studio
+echo "::set-output name=url::$URL"
