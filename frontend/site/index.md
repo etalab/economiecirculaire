@@ -6,7 +6,7 @@ title: Les données de l'économie circulaire
 
 # Les données de l'économie circulaire
 
-Téléchargez, réutilisez et demandez les données relatives à l’économie circulaire
+Téléchargez, réutilisez et demandez les données de l’économie circulaire
 
 </Hero>
 
@@ -28,11 +28,13 @@ L’économie circulaire désigne un modèle dont l’objectif est de produire d
 
 <Section class="section-grey">
 
+## Les données de l'économie circulaire
+
 <div class="row">
 
 <div>
 
-Découvrez les données déjà ouvertes.
+Découvrez les jeux de données de l’économie circulaire disponibles en open data.  
 
 <Button url="/donnees-ouvertes.html">Données ouvertes</Button>
 
@@ -40,25 +42,17 @@ Découvrez les données déjà ouvertes.
 
 <div>
 
-Explorez l'inventaire des données à ouvrir.
+Découvrez les documentations des jeux de données de l'économie circulaire. 
+ 
+<Button url="">Documentation</Button>
+
+</div>
+
+<div>
+
+Explorez l'inventaire des données de l'économie circulaire et découvrez les futures publications. 
 
 <Button url="/inventaire.html">Inventaire</Button>
-
-</div>
-
-<div>
-
-Si vous disposez d'un jeu de données relatif à l'économie circulaire, vous pouvez le publier sur data.gouv.fr.
-
-<Button url="https://www.data.gouv.fr/fr/">Publier sur data.gouv.fr</Button>
-
-</div>
-
-<div>
-
-Si vous recherchez des données relatives à l'économie circulaire qui ne sont pas publiées à ce jour, vous pouvez nous faire parvenir votre demande.
-
-<Button url="/demande.html">Demander des données</Button>
 
 </div>
 
@@ -68,32 +62,24 @@ Si vous recherchez des données relatives à l'économie circulaire qui ne sont 
 
 <Section>
 
+## Participer à l'ouverture des jeux de données
+
+
 <div class="row">
 
 <div>
 
-## Les données
+Vous produisez ou collectez des données relatives à l’économie circulaire ? Vous avez utilisé des données relatives à l’économie circulaire ? 
+Donnez de la visibilité à votre travail sur www.data.gouv.fr ! 
 
-Découvrez les données déjà ouvertes.
-
-<Button url="/donnees-ouvertes.html">Données ouvertes</Button>
-
-Explorez l'inventaire des données à ouvrir.
-
-<Button url="/inventaire.html">Inventaire</Button>
-
+<Button url="https://www.data.gouv.fr/fr/">Publier sur data.gouv.fr</Button>
 
 </div>
 
 <div>
-
-## Soumettre ou demander un nouveau jeu de données
-
-Si vous disposez d'un jeu de données relatif à l'économie circulaire, vous pouvez le publier sur data.gouv.fr.
-
-<Button url="https://www.data.gouv.fr/fr/">Publier sur data.gouv.fr</Button>
-
-Si vous recherchez des données relatives à l'économie circulaire qui ne sont pas publiées à ce jour, vous pouvez nous faire parvenir votre demande.
+  
+Vous recherchez des données relatives à l'économie circulaire qui ne sont pas publiées à ce jour ? 
+Adressez-nous votre demande !
 
 <Button url="/demande.html">Demander des données</Button>
 
