@@ -43,8 +43,7 @@ Découvrez les jeux de données de l’économie circulaire disponibles en open 
 <div>
 
 Découvrez les documentations des jeux de données de l'économie circulaire. 
-
-Texte 
+ 
 <Button url="">Documentation</Button>
 
 </div>
@@ -70,7 +69,8 @@ Explorez l'inventaire des données de l'économie circulaire et découvrez les f
 
 <div>
 
-Vous produisez ou collectez des données relatives à l’économie circulaire ? Vous avez utilisé des données relatives à l’économie circulaire ? Donnez de la visibilité à votre travail sur www.data.gouv.fr ! 
+Vous produisez ou collectez des données relatives à l’économie circulaire ? Vous avez utilisé des données relatives à l’économie circulaire ? 
+Donnez de la visibilité à votre travail sur www.data.gouv.fr ! 
 
 <Button url="https://www.data.gouv.fr/fr/">Publier sur data.gouv.fr</Button>
 
@@ -78,7 +78,8 @@ Vous produisez ou collectez des données relatives à l’économie circulaire ?
 
 <div>
   
-Vous recherchez des données relatives à l'économie circulaire qui ne sont pas publiées à ce jour ? Adressez-nous votre demande !
+Vous recherchez des données relatives à l'économie circulaire qui ne sont pas publiées à ce jour ? 
+Adressez-nous votre demande !
 <Button url="/demande.html">Demander des données</Button>
 
 </div>
