@@ -45,7 +45,7 @@ jobs:
       # deploy app
       - name: dokku deploy
         id: deploy
-        uses: ./.github/actions/dokku-preview-create-action
+        uses: abulte/dokku-pr-action@HEAD
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           HOST: app.etalab.studio
