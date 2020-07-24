@@ -48,6 +48,7 @@ jobs:
           HOST: app.etalab.studio
           PROJECT: economie-circulaire
           AIRTABLES_API_KEY: ${{ secrets.AIRTABLES_API_KEY }}
+          JUST_A_VAR: ${{ secrets.JUST_A_VAR }}
 
       - name: set deployment status
         uses: octokit/request-action@v2.x
