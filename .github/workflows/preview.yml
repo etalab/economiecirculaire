@@ -3,7 +3,6 @@ name: Deploy PR to dokku
 on:
   pull_request:
     types: [opened, synchronize, closed, reopened]
-    # types: [opened]
 
 env:
   GITHUB_EVENT_ACTION: "${{ github.event.action }}"
@@ -35,7 +34,6 @@ jobs:
           repository: ${{ github.repository }}
           deployment: ${{ fromJson(steps.create_deployment.outputs.data).id }}
           environment: dokku-preview
-          # environment_url: ${{ steps.deploy.outputs.url }}
           mediaType: '{"previews": ["flash", "ant-man"]}'
           state: in_progress
         env:
@@ -49,7 +47,7 @@ jobs:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           HOST: app.etalab.studio
           PROJECT: economie-circulaire
-          LINKED_SERVICE: postgres
+          AIRTABLES_API_KEY: ${{ secrets.AIRTABLES_API_KEY }}
 
       - name: set deployment status
         uses: octokit/request-action@v2.x
