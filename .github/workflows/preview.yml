@@ -49,6 +49,7 @@ jobs:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           HOST: app.etalab.studio
           PROJECT: economie-circulaire
+          LINKED_SERVICE: postgres
 
       - name: set deployment status
         uses: octokit/request-action@v2.x
